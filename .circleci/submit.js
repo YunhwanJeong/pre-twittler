@@ -58,7 +58,7 @@ exec('echo "$airtable_api_key"', (err, apikey) => {
     req.write(
       JSON.stringify({
         fields: {
-          subject: "twittler",
+          subject: "PRE-twittler",
           username: username.trim()
         }
       })
@@ -126,7 +126,7 @@ exec('echo "$learnco_api_key"', (err, apikey) => {
     req.write(
       JSON.stringify({
         fields: {
-          subject: "pre-twittler",
+          subject: "PRE-twittler",
           username: username.trim()
         }
       })

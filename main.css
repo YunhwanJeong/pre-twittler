@@ -10,11 +10,51 @@
 }
 
 #new-twitt {
-  border: 2px solid gray;
+  background-color: #13BEEC;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
+.milestone {
+  color: snow;
+  margin: 0.5rem;
+}
+
+#new-twitt input {
+  margin: 0.5rem;
+}
+
+#new-twitt button {
+  padding: 1rem;
+  margin: 1rem 0.5rem 0.5rem 0.5rem;
+}
+
 #tweets {
-  border: 2px solid gray;
+  background-color: lightgrey;
+}
+
+#refreshTweets {
+  border-bottom: 1px solid gray;
+  background-color: #333D79;
+  padding: 1rem;
+}
+
+#refreshTweets button {
+  padding: 1rem;
+}
+
+.tweet {
+  padding: 1.5rem;
+}
+
+.username {
+  font-size: 1.5rem;
+}
+
+.timestamp {
+  float: right;
+}
+
+.message {
+  border-bottom: 1px solid gray;
 }

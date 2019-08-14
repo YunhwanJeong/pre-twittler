@@ -1,51 +1,65 @@
-// your code here
-
-// function createButton() {
-//     var btn = document.createElement("BUTTON");
-//     var t = document.createTextNode("Click Me!");
-//     btn.appendChild(t);
-//     document.body.appendChild(btn);
-// }
-// createButton();
-
-/**psedo code
- *  -tweets 하드코딩
- *  -DATA loop 돌면서 tweet 하나씩 생성하는 로직 & tweets에 appendchild하는 로직
- */
-
-
-
-
-function createTweet(DATA) {
+function showTweet(i) {
   let tweetsPointer = document.querySelector("#tweets");
 
-  for(let tweet of DATA) {
-    let tweetDiv = document.createElement("div");
-    tweetDiv.setAttribute("class", "tweet")
+  let tweetDiv = document.createElement("div");
+  tweetDiv.setAttribute("class", "tweet")
 
-    let usernameSpan = document.createElement("span");
-    let usernameTextnode = document.createTextNode(tweet.user);
-    usernameSpan.appendChild(usernameTextnode);
-    usernameSpan.setAttribute("class", "username");
-    tweetDiv.appendChild(usernameSpan);
+  let usernameSpan = document.createElement("span");
+  let usernameTextnode = document.createTextNode(DATA[i].user);
+  usernameSpan.appendChild(usernameTextnode);
+  usernameSpan.setAttribute("class", "username");
+  tweetDiv.appendChild(usernameSpan);
 
-    let timestampSpan = document.createElement("span");
-    let timestampTextnode = document.createTextNode(tweet.created_at);
-    timestampSpan.appendChild(timestampTextnode);
-    timestampSpan.setAttribute("class", "timestamp");
-    tweetDiv.appendChild(timestampSpan);
+  let timestampSpan = document.createElement("span");
+  let timestampTextnode = document.createTextNode(DATA[i].created_at);
+  timestampSpan.appendChild(timestampTextnode);
+  timestampSpan.setAttribute("class", "timestamp");
+  tweetDiv.appendChild(timestampSpan);
 
-    let messageDiv = document.createElement("div");
-    let messageTextnode = document.createTextNode(tweet.message);
-    messageDiv.appendChild(messageTextnode);
-    messageDiv.setAttribute("class", "message");
-    tweetDiv.appendChild(messageDiv);
+  let messageDiv = document.createElement("div");
+  let messageTextnode = document.createTextNode(DATA[i].message);
+  messageDiv.appendChild(messageTextnode);
+  messageDiv.setAttribute("class", "message");
+  tweetDiv.appendChild(messageDiv);
 
-    tweetsPointer.appendChild(tweetDiv);    
-  }
+  tweetsPointer.insertBefore(tweetDiv, tweetsPointer.childNodes[2]);    
 }
 
-createTweet(DATA);
+function showInitialTweets() {
+
+  for(let i = 0; i < DATA.length; i++) {
+    showTweet(i)
+  }
+}
+showInitialTweets();
+
+function createRandomTweet() {
+  let randomTweet = generateNewTweet();
+  DATA.push(randomTweet);
+  showTweet(DATA.indexOf(randomTweet));
+}
+
+/**pseudo code
+ * 
+ * -작성자 이름 클릭하면 타임라인을 볼 수 있도록
+ * 
+ *  -클릭하면 함수 작동
+ *   -tweets에서 해당 id 가진 것들만 filter.
+ * 
+ */
+
+// document.getElementsByClassName("username").onclick = showTimeline;
+// function showTimeline() {
+//   let tweetsPointer = document.getElementById("tweets");
+  
+// }
+
+
+
+
+
+
+
 
 // DATA는 이미 작성된 트윗을 표시합니다.
 console.log(DATA)

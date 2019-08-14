@@ -13,6 +13,8 @@
   background-color: #13BEEC;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
+  margin-left: 15rem;
+  margin-right: 15rem; 
 }
 
 .milestone {
@@ -21,7 +23,12 @@
 }
 
 #new-twitt input {
+  height: 2rem;
   margin: 0.5rem;
+}
+
+#message input {
+  width: 80rem;
 }
 
 #new-twitt button {
@@ -31,6 +38,8 @@
 
 #tweets {
   background-color: lightgrey;
+  margin-left: 15rem;
+  margin-right: 15rem; 
 }
 
 #refreshTweets {

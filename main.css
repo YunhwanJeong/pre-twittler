@@ -27,7 +27,7 @@
   margin: 0.5rem;
 }
 
-#message input {
+#inputMessage input {
   width: 80rem;
 }
 
@@ -42,13 +42,13 @@
   margin-right: 15rem; 
 }
 
-#refreshTweets {
+#buttonArea {
   border-bottom: 1px solid gray;
   background-color: #333D79;
   padding: 1rem;
 }
 
-#refreshTweets button {
+#buttonArea button {
   padding: 1rem;
 }
 

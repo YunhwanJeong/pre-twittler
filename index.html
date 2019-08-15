@@ -12,22 +12,22 @@
   <div id="title">twittler</div>
 
   <div id="new-twitt">
-    <div id="username">
+    <div id="inputUsername">
       <div class="milestone">Username</div> 
       <input type="text" placeholder="Write you name">
     </div>
 
-    <div id="message">
+    <div id="inputMessage">
       <div class="milestone">Message</div> 
       <input type="text" placeholder="What's happening?">
     </div>
-
-    <button>Tweet!</button>
+    <button onclick="createTypedNewTweet()">Tweet!</button>
   </div>
 
   <div id="tweets">
-    <div id="refreshTweets">
-      <button onclick="createRandomTweet()">check new tweets</button>
+    <div id="buttonArea">
+      <button id="refreshButton" onclick="createRandomTweet()" style="display: inline">check new tweets</button>
+      <button id="clearFilter" onclick="clearFilter()" style="display: none">Go back & Clear filter</button>
     </div>
   </div>
 

@@ -86,8 +86,8 @@ function clearFilter() {
 
 function createTypedNewTweet() {
   let tweet = {};
-  let typedUsername = document.querySelector("#inputUsername input").textContent;
-  let typedMessage = document.querySelector("#inputMessage input").textContent;
+  let typedUsername = document.querySelector("#inputUsername input").value;
+  let typedMessage = document.querySelector("#inputMessage input").value;
 
   tweet.user = typedUsername;
   tweet.message = typedMessage;
@@ -97,15 +97,13 @@ function createTypedNewTweet() {
   showTweet(DATA.indexOf(tweet));
 }
 
-
-
-
-
-
-// DATA는 이미 작성된 트윗을 표시합니다.
-console.log(DATA)
-
-// generateNewTweet을 호출할 때마다 새로운 트윗을 생성합니다.
-console.log(generateNewTweet());
-
-// document.getElementById('tweets').innerHTML = 'hello twittler, check developer console!';
+function triggerButtonClickOnEnter() {
+  let inputMessage = document.querySelector("#inputMessage input");
+  inputMessage.addEventListener("keyup", function(event) {
+    if(event.keyCode === 13) {
+      event.preventDefault();
+      document.querySelector("#new-twitt button").click();
+    }
+  })
+}
+triggerButtonClickOnEnter();

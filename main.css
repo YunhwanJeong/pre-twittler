@@ -29,8 +29,12 @@
   margin: 0.5rem;
 }
 
+#inputUsername input {
+  width: 20%;
+}
+
 #inputMessage input {
-  width: 80rem;
+  width: 90%;
 }
 
 #new-twitt button {
